@@ -1,0 +1,29 @@
+new-tweet {
+    width: 100%;
+    background-color: #f5f2d0;
+
+  }
+
+#tweetInput {
+    width: 100%;
+    border: #f5f2d0;
+    resize: none;
+    background-color: #f5f2d0;
+    border-bottom: solid black;
+}
+
+#submitButton {
+    color: white;
+    background-color: blue;
+    border: none;
+}
+
+.composeH2 {
+    padding: 0;
+    margin: 0;
+}
+
+.counter {
+    float: right;
+}
+  
