@@ -1,0 +1,48 @@
+article.tweet:hover {
+    opacity: 1;
+    box-shadow: 10px 10px;
+}
+
+.tweetContainer {
+    border: solid black;
+    margin-top: 10px;
+    padding-top: 3px;
+    height: auto;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+article.tweet {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#username {
+    font-size: medium;
+    display: inline;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+#userHandle {
+    font-size: medium;
+    float: right;
+    margin-left: 100px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-left: 30px;
+    margin-top: 0px;
+    opacity: 0.3;
+}
+
+#exampleText {
+    display: block;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+#tweetFooter {
+    border-top: solid black;
+    padding-top: 20px;
+    font-size: 15px;
+}
