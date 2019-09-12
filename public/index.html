@@ -55,7 +55,10 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-
+      <div>
+        <strong><p id="longError">Tweet input is too long!</p></strong>
+        <strong><p id="noInput">You can't post empty tweets!</p></strong>
+      </div>
           <section class="new-tweet">
               <h2 class="composeH2">Compose Tweet</h2>
               <form id="formSubmission" method="POST" action="/tweets/">

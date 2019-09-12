@@ -29,3 +29,13 @@ new-tweet {
     float: right;
     
 }
+
+#longError {
+    border: solid red;
+    color: red;
+}
+
+#noInput {
+    border: solid red;
+    color: red;
+}

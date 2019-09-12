@@ -56,6 +56,8 @@ const escape =  function(str) {
 
 
 $(document).ready(function() {
+  $("#longError").hide();
+  $("#noInput").hide();
   console.log("App.js ready!")
 
 
@@ -65,16 +67,19 @@ formSubmission.on("submit", (event) => {
   event.preventDefault();
 
   let inputLength = $("#tweetInput").val().length;
+ 
 
   if (inputLength > 140) {
-    alert("Tweet input is too long!");
+    $("#longError").show();
     return;
   };
 
   if (inputLength === 0) {
-    alert("You can't post empty tweets!");
+    $("#noInput").show();
     return;
-  }
+  };
+  $("#longError").hide();
+  $("#noInput").hide();
 
   $.ajax({
     url: '/tweets',
