@@ -10,6 +10,7 @@ new-tweet {
     resize: none;
     background-color: #f5f2d0;
     border-bottom: solid black;
+    font-family: 'Source Sans Pro';
 }
 
 #submitButton {
@@ -21,6 +22,7 @@ new-tweet {
 .composeH2 {
     padding: 0;
     margin: 0;
+    font-family: 'Source Sans Pro';
 }
 
 .counter {

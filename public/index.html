@@ -24,12 +24,22 @@
     <!-- CharCounter JS -->
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
 
+    <!-- downArrow JS-->
+    <script type="text/javascript" src="scripts/downArrow.js"></script>
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+    <div>
+      <form id="writeTweet" method="POST"></form>
+      <text class="writeTweets">Write a new tweet!</text>
+      <img class="downArrow" src="images/arrow-down-solid.svg">
+      </form>
+
+    </div>
     </nav>
 
     <header id="frontHeader">
@@ -45,11 +55,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      
-      <p>
 
-          Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor hodor hodor; hodor hodor; hodor hodor hodor! Hodor hodor HODOR! Hodor hodor... Hodor hodor hodor...</p>
-    
           <section class="new-tweet">
               <h2 class="composeH2">Compose Tweet</h2>
               <form id="formSubmission" method="POST" action="/tweets/">

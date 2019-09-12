@@ -1,6 +1,7 @@
 nav {
     position: fixed;
     font-family: 'Bungee', cursive;
+    font-size: 30px;
     top: 0;
     right: 0;
     left: 0;
@@ -13,4 +14,36 @@ nav {
     padding-left: 1.5em;
     padding-bottom: 1.5em;
     width: 100%;
+}
+
+.writeTweets {
+    float: right;
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    position: relative;
+    display: inline;
+    bottom: 30px;
+}
+
+.downArrow {
+    z-index:9999;
+    color: white;
+    width: 15px;
+    height: 30px;
+    float: right;
+    position: relative;
+    left: 85px;
+    animation-name: arrowFunction;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrowFunction {
+    0% {bottom: 0px}
+    25% {bottom: 2.5px}
+    50% {bottom: 5px}
+    100% {bottom: 10px}
+    50% {bottom: 5px}
+    25% {bottom: 2.5px}
+    0% {bottom: 0px}
 }

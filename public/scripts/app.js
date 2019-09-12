@@ -10,17 +10,24 @@
 const renderTweets = function(tweets) {
   $('.tweetContainer').empty();
   tweets.forEach(data => {
-      $('.tweetContainer').append(createTweetElement(data));
+      $('.tweetContainer').prepend(createTweetElement(data));
   });
 
+}
+
+const finalDatePosted = timeStamp => {
+  let date = new Date().getTime();
+  let postedTime = (date - Number(timeStamp)) / 1000 / 60 / 60 / 24;
+  return Math.floor(postedTime)
 }
 
 const createTweetElement = function(data) {
   const username = data.user.name;
   const userHandle = data.user.handle;
-  const exampleText = data.content.text;
-  const date = Date.now();
+  const exampleText = escape(data.content.text);
   const avatar = data.user.avatars;
+  const createdAt = finalDatePosted(data.created_at);
+
 
   return `
   <article class="tweet">
@@ -31,7 +38,7 @@ const createTweetElement = function(data) {
       <text id="exampleText">${exampleText}</text>
     </header>
     <footer id="tweetFooter">
-      <text>${date}</text>
+      <text>${createdAt} Days Ago</text>
     </footer>
   </article>`;
 
@@ -41,6 +48,13 @@ const createTweetElement = function(data) {
 // return $tweet;
 };
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
 $(document).ready(function() {
   console.log("App.js ready!")
 
@@ -49,6 +63,18 @@ const formSubmission = $("#formSubmission");
 
 formSubmission.on("submit", (event) => {
   event.preventDefault();
+
+  let inputLength = $("#tweetInput").val().length;
+
+  if (inputLength > 140) {
+    alert("Tweet input is too long!");
+    return;
+  };
+
+  if (inputLength === 0) {
+    alert("You can't post empty tweets!");
+    return;
+  }
 
   $.ajax({
     url: '/tweets',
