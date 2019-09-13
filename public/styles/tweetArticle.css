@@ -37,11 +37,41 @@ article.tweet {
 #exampleText {
     display: block;
     padding-top: 15px;
-    font-size: 20px;
+    font-size: 25px;
+    word-break: break-all;
+    font-family: 'Source Sans Pro';
 }
 
 #tweetFooter {
     border-top: solid black;
     padding-top: 20px;
     font-size: 15px;
+}
+
+#heart {
+    z-index:9999;
+    color: white;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: right;
+}
+
+#reTweet {
+    z-index:9999;
+    color: white;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: right;
+
+}
+
+#flag {
+    z-index:9999;
+    color: white;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: right;
 }

@@ -39,6 +39,9 @@ const createTweetElement = function(data) {
     </header>
     <footer id="tweetFooter">
       <text>${createdAt} Days Ago</text>
+      <img id="heart" src="images/heart-regular.svg">
+      <img id="reTweet" src="images/retweet-solid.svg">
+      <img id="flag" src="images/flag-solid.svg">
     </footer>
   </article>`;
 
@@ -56,6 +59,7 @@ const escape =  function(str) {
 
 
 $(document).ready(function() {
+  $('.new-tweet').slideUp(100);
   $("#longError").hide();
   $("#noInput").hide();
   console.log("App.js ready!")
