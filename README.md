@@ -8,6 +8,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 !["The homepage for Tweeter!"](https://raw.githubusercontent.com/ThomasBogdanov/tweeter/master/docs/TweeterFinalProduct.png)
 
+!["Great error handling and updated tweets!"](https://raw.githubusercontent.com/ThomasBogdanov/tweeter/master/docs/TooManyCharacters.png)
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
@@ -21,3 +23,10 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 - Chance
 - md5
+
+#App Information
+
+- A basic twitter clone where you can post tweets (With a max character length of 140!)
+- You can see when all tweets were posted, who posted them, and their user handle!
+- Begin tweeting right away by clicking on the arrow below the "Write a new tweet!" sign at the top right of the      page!
+
