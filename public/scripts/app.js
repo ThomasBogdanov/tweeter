@@ -4,22 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-// Fake data taken from initial-tweets.json
-
 const renderTweets = function(tweets) {
   $('.tweetContainer').empty();
   tweets.forEach(data => {
-      $('.tweetContainer').prepend(createTweetElement(data));
+    $('.tweetContainer').prepend(createTweetElement(data));
   });
-
-}
+};
 
 const finalDatePosted = timeStamp => {
   let date = new Date().getTime();
   let postedTime = (date - Number(timeStamp)) / 1000 / 60 / 60 / 24;
-  return Math.floor(postedTime)
-}
+  return Math.floor(postedTime);
+};
 
 const createTweetElement = function(data) {
   const username = data.user.name;
@@ -27,8 +23,6 @@ const createTweetElement = function(data) {
   const exampleText = escape(data.content.text);
   const avatar = data.user.avatars;
   const createdAt = finalDatePosted(data.created_at);
-
-
   return `
   <article class="tweet">
     <header>
@@ -44,61 +38,54 @@ const createTweetElement = function(data) {
       <img id="flag" src="images/flag-solid.svg">
     </footer>
   </article>`;
-
-
-// let $tweet = $('<article>').addClass('tweet');
-  
-// return $tweet;
 };
 
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
-
+};
 
 $(document).ready(function() {
   $('.new-tweet').slideUp(100);
   $("#longError").hide();
   $("#noInput").hide();
-  console.log("App.js ready!")
+  console.log("App.js ready!");
 
+  const formSubmission = $("#formSubmission");
 
-const formSubmission = $("#formSubmission");
+  formSubmission.on("submit", (event) => {
+    event.preventDefault();
 
-formSubmission.on("submit", (event) => {
-  event.preventDefault();
-
-  let inputLength = $("#tweetInput").val().length;
+    let inputLength = $("#tweetInput").val().length;
  
+    if (inputLength > 140) {
+      $("#longError").show();
+      return;
+    }
 
-  if (inputLength > 140) {
-    $("#longError").show();
-    return;
-  };
+    if (inputLength === 0) {
+      $("#noInput").show();
+      return;
+    }
+    
+    $("#longError").hide();
+    $("#noInput").hide();
 
-  if (inputLength === 0) {
-    $("#noInput").show();
-    return;
-  };
-  $("#longError").hide();
-  $("#noInput").hide();
-
-  $.ajax({
-    url: '/tweets',
-    type: 'POST',
-    data: formSubmission.serialize()
-  })
-  .then(loadTweets);
-  $("#tweetInput").val('');
-});
-
-const loadTweets = function() {
-  $.ajax({ url: "/tweets"})
-    .then(tweets => {
-      renderTweets(tweets);
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: formSubmission.serialize()
     })
+      .then(loadTweets);
+    $("#tweetInput").val('');
+  });
+
+  const loadTweets = function() {
+    $.ajax({ url: "/tweets"})
+      .then(tweets => {
+        renderTweets(tweets);
+      });
   };
   loadTweets();
 });

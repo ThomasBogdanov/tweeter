@@ -1,7 +1,6 @@
 new-tweet {
     width: 100%;
     background-color: #f5f2d0;
-
   }
 
 #tweetInput {
@@ -27,7 +26,6 @@ new-tweet {
 
 .counter {
     float: right;
-    
 }
 
 #longError {
